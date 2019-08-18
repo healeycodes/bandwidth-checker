@@ -12,7 +12,7 @@ This project includes two automated methods of testing download speed.
 
 A Node server displays a scatter graph of the recent bandwidth results via Chart.js.
 
-I run this on a Raspberry Pi connected to my router via ethernet.
+I run my own setup on a Raspberry Pi connected to my router via ethernet.
 
 &nbsp;
 
