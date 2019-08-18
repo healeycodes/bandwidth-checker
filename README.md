@@ -6,9 +6,11 @@
 
 Some ISPs promise money back if your bandwidth goes below a certain level.
 
-This project runs a headless Chrome browser to test bandwidth speed on the client via Netflix's fast.com.
+This project includes two methods of testing download speed.
+  - Headless Chromium browser via Netflix's fast.com.
+  - Speedtest's CLI.
 
-Also included is a Node server that displays a scatter graph of the recent bandwidth results via Chart.js.
+A Node server displays a scatter graph of the recent bandwidth results via Chart.js.
 
 I run this on a Raspberry Pi connected to my router via ethernet.
 
@@ -16,15 +18,21 @@ I run this on a Raspberry Pi connected to my router via ethernet.
 
 ## Install
 
-#### Client
+### Client
 
 `cd client`
 
-`pip install selenium`
-
 `pip install requests`
 
-#### Server
+**Speedtest CLI**:
+
+`pip install speedtest-cli`
+
+**Headless browser**:
+
+`pip install selenium`
+
+### Server
 
 `cd server`
 
@@ -34,18 +42,28 @@ I run this on a Raspberry Pi connected to my router via ethernet.
 
 ## Run
 
-#### Client
+### Client
 
-Setup a cron job to run:
+Setup a cron job to run either version.
 
-`python bandwidthchecker.py '/usr/lib/chromium-browser/chromedriver' 'https://server-location/save' 'password'`
+**Speedtest CLI**:
+
+`python clitest.py 'https://server-location/save' 'password'`
+
+Where the arguments are:
+- Path to the endpoint to save the results.
+- Password for that endpoint.
+
+**Headless browser**:
+
+`python browsertest.py '/usr/lib/chromium-browser/chromedriver' 'https://server-location/save' 'password'`
 
 Where the arguments are:
 - Path to the ChromeDriver executable (watch out for version clashes).
 - Path to the endpoint to save the results.
 - Password for that endpoint.
 
-#### Server
+### Server
 
 Setup password:
 ```
