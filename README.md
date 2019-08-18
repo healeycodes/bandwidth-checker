@@ -10,6 +10,8 @@ This project runs a headless Chrome browser to test bandwidth speed on the clien
 
 Also included is a Node server that displays a scatter graph of the recent bandwidth results via Chart.js.
 
+I run this on a Raspberry Pi connected to my router via ethernet.
+
 &nbsp;
 
 ## Install
