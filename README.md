@@ -6,9 +6,9 @@
 
 Some ISPs promise money back if your bandwidth goes below a certain level.
 
-This project includes two methods of testing download speed.
-  - Headless Chromium browser via Netflix's fast.com.
+This project includes two automated methods of testing download speed.
   - Speedtest's CLI.
+  - Headless Chromium browser via Netflix's fast.com.
 
 A Node server displays a scatter graph of the recent bandwidth results via Chart.js.
 
