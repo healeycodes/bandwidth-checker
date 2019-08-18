@@ -38,10 +38,10 @@ I run this on a Raspberry Pi connected to my router via ethernet.
 
 Setup a cron job to run:
 
-`python bandwidthchecker.py './chromedriver' 'https://server-location/save' 'password'`
+`python bandwidthchecker.py '/usr/lib/chromium-browser/chromedriver' 'https://server-location/save' 'password'`
 
 Where the arguments are:
-- Path to the correct ChromeDriver version.
+- Path to the ChromeDriver executable (watch out for version clashes).
 - Path to the endpoint to save the results.
 - Password for that endpoint.
 
@@ -62,3 +62,5 @@ Windows PowerShell:
 `npm start`
 
 Visit the root path `/` to view bandwidth results.
+
+Bandwidth results are stored by the client via `/save`
