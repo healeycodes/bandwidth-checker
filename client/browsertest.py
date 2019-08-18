@@ -41,6 +41,7 @@ def send_speed(url, data, pw):
         :param url: Endpoint to send a POST request to
         :param data: Dictionary of speed, units, and time
         :param pw: Password for the endpoint
+        :return: status code of the request
     """
     data['pw'] = pw
     r = requests.post(url, json=data)
@@ -51,6 +52,7 @@ def create_chrome_driver(chrome_driver_path):
     """
     Create instance of a chrome webdriver.
         :param chrome_driver_path: Path to chromedriver executable
+        :return: ChomeDriver instance
     """
     options = Options()
     options.headless = True
