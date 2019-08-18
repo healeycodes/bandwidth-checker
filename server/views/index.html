@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bandwidth checker :)</title>
+        <meta name="description" content="A cool thing made with Glitch">
+        <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="chart.bundle.min.js"></script>
+    </head>
+    <body style="width: 800px; height: 800px;">
+          <pre>
+              Speeds are tested via Netflix's fast.com bandwidth test.
+              Showing last ten results (normally recorded half-hourly).
+          </pre>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <script>
+            fetch('/read')
+              .then(response => response.json())
+              .then(json => renderGraph(json));
+            const safeDate = time => new Date(parseInt(time)).toUTCString();
+            const renderGraph = (speedData) => {
+              var ctx = document.getElementById('myChart').getContext('2d');
+              var myChart = new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                  datasets: [{
+                    data: speedData,
+                    backgroundColor: () => 'rgba(255, 99, 132, 0.2)',
+                    borderColor: () => 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    pointRadius: 5,
+                  }]
+                },
+                options: {
+                  scales: {
+                    xAxes: [{
+                      type: 'linear',
+                      position: 'bottom',
+                      ticks: {
+                        userCallback: (label, index, labels) => safeDate(label)
+                      },
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Date'
+                      }
+                    }],
+                    yAxes: [{
+                      scaleLabel: {
+                        display: true,
+                        labelString: 'Mbps'
+                      },
+                      ticks: {
+                        beginAtZero: true
+                      }
+                    }],
+                  },
+                  title: {
+                    display: true,
+                    text: 'Bandwidth Test Results'
+                  },
+                  legend: {
+                    display: false,
+                  },
+                  tooltips: {
+                    callbacks: {
+                      label: function(tooltipItem, data) {
+                        return `${tooltipItem.value} Mbps @ ${safeDate(tooltipItem.label)}`;
+                      }
+                    }
+                  }
+                }
+              });
+            }
+        </script>
+    </body>
+</html>
