@@ -8,7 +8,7 @@ Some ISPs promise money back if your bandwidth goes below a certain level.
 
 This project runs a headless Chrome browser to test bandwidth speed on the client via Netflix's fast.com.
 
-Also included is a Node server that displays a scatter plot of the recent bandwidth results.
+Also included is a Node server that displays a scatter graph of the recent bandwidth results via Chart.js.
 
 &nbsp;
 
