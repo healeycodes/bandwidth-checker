@@ -22,6 +22,8 @@ I run this on a Raspberry Pi connected to my router via ethernet.
 
 `pip install selenium`
 
+`pip install requests`
+
 #### Server
 
 `cd server`
