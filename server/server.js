@@ -23,7 +23,7 @@ app.get("/read", function(request, response) {
   const prepared = data.map(s => {
     return { x: s.date, y: s.speed };
   });
-  const trimmed = prepared.slice(Math.max(prepared.length - 10, 1));
+  const trimmed = prepared.slice(Math.max(prepared.length - 48, 1));
   response.send(trimmed); // send last ten results
 });
 
