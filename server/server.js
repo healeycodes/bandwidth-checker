@@ -21,7 +21,7 @@ app.get("/", function(request, response) {
 app.get("/read", function(request, response) {
   const data = db.get("results").value();
   const prepared = data.map(s => {
-    return { x: s.date, y: s.speed };
+    return { x: s.date, y: Number(s.speed).toFixed(3) };
   });
   const trimmed = prepared.slice(Math.max(prepared.length - 48, 1));
   response.send(trimmed); // send last ten results
