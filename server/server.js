@@ -24,7 +24,7 @@ app.get("/read", function(request, response) {
     return { x: s.date, y: Number(s.speed).toFixed(3) };
   });
   const trimmed = prepared.slice(Math.max(prepared.length - 48, 1));
-  response.send(trimmed); // send last ten results
+  response.send(trimmed); // send a slice of results
 });
 
 // send bandwidth test results here
