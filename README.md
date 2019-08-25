@@ -68,13 +68,13 @@ Where the arguments are:
 Setup password:
 ```
 Unix Bash (Linux, Mac, etc.):
-$ export PASSWORD=hello
+$ export SECRET=hello
 
 Windows CMD:
-> set PASSWORD=hello
+> set SECRET=hello
 
 Windows PowerShell:
-> $env:PASSWORD = "hello"
+> $env:SECRET = "hello"
 ```
 
 `npm start`
