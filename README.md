@@ -82,3 +82,15 @@ Windows PowerShell:
 Visit the root path `/` to view bandwidth results.
 
 Bandwidth results are stored by the client via `/save`
+
+&nbsp;
+
+### Contributing
+
+Feel free to raise any issues and submit any reasonable pull requests.
+
+&nbsp;
+
+### License
+
+MIT (see LICENSE.md).
