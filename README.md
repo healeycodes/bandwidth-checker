@@ -1,5 +1,9 @@
 # ⚡ Bandwidth Checker ⚡
 
+My blog post: [I Built a Bot to Try and Get Money Back From My Internet Provider](https://healeycodes.com/webdev/javascript/python/opensource/2019/08/22/bot-vs-isp.html)
+
+&nbsp;
+
 ![preview image](https://github.com/healeycodes/bandwidth-checker/raw/master/graphexample.png "Image of scatter graph bandwidth results")
 
 &nbsp;
