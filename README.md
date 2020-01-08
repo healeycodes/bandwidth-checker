@@ -69,16 +69,19 @@ Where the arguments are:
 
 ### Server
 
-Setup password:
+Setup password, and port (default: 3000):
 ```
 Unix Bash (Linux, Mac, etc.):
 $ export SECRET=hello
+$ export PORT=3000
 
 Windows CMD:
 > set SECRET=hello
+> set PORT=3000
 
 Windows PowerShell:
 > $env:SECRET = "hello"
+> $env:PORT = "3000"
 ```
 
 `npm start`
