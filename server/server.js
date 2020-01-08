@@ -7,8 +7,7 @@ const db = low(adapter);
 db.defaults({ results: [] }).write();
 
 const secret = process.env.SECRET;
-if (!secret)
-  console.warn("The secret has not been defined!");
+if (secret === undefined) console.warn("The secret has not been defined!");
 
 // express server
 const express = require("express");
