@@ -6,12 +6,18 @@ const db = low(adapter);
 
 db.defaults({ results: [] }).write();
 
+const secret = process.env.SECRET;
+if (!secret)
+  console.warn("The secret has not been defined!");
+
 // express server
 const express = require("express");
 const app = express();
 app.use(express.json());
 
 app.use(express.static("public"));
+
+app.set("port", process.env.PORT || 3000);
 
 app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
@@ -30,7 +36,7 @@ app.get("/read", function(request, response) {
 // send bandwidth test results here
 app.post("/save", function(request, response) {
   // not secure against timing-based attacks!
-  if (request.body.pw !== process.env.SECRET) {
+  if (request.body.pw !== secret) {
     return response.status(400).send("Bad pw");
   }
   db.get("results")
@@ -44,6 +50,6 @@ app.post("/save", function(request, response) {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
+const listener = app.listen(app.get("port"), function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
