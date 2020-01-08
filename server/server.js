@@ -28,7 +28,7 @@ app.get("/read", function(request, response) {
   const prepared = data.map(s => {
     return { x: s.date, y: Number(s.speed).toFixed(3) };
   });
-  const trimmed = prepared.slice(Math.max(prepared.length - 48, 1));
+  const trimmed = prepared.slice(Math.max(prepared.length - 48, 0));
   response.send(trimmed); // send a slice of results
 });
 
