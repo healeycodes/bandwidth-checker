@@ -28,6 +28,8 @@ I run my own setup on a Raspberry Pi connected to my router via ethernet.
 
 `pip install requests`
 
+and one of the following
+
 **Speedtest CLI**:
 
 `pip install speedtest-cli`
@@ -52,7 +54,10 @@ Setup a cron job to run either version.
 
 **Speedtest CLI**:
 
-`python clitest.py 'https://server-location/save' 'password'`
+```
+cd client
+python clitest.py 'https://server-location/save' 'password'
+```
 
 Where the arguments are:
 - Path to the endpoint to save the results.
@@ -84,7 +89,10 @@ Windows PowerShell:
 > $env:PORT = "3000"
 ```
 
-`npm start`
+```
+cd server
+npm start
+```
 
 Visit the root path `/` to view bandwidth results.
 
